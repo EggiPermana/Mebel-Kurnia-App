@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MebelKurnia</string>
+
+    <!--    login-->
+    <string name="login">Login</string>
+    <string name="no_akun">Tidak Punya Akun?  </string>
+    <string name="disini">   Daftar Disini</string>
+    <string name="nama_pengguna">Nama Pengguna</string>
+    <string name="password">Kata Sandi</string>
+
+
+    <!--    register-->
+    <string name="register">Daftar</string>
+    <string name="no_hp">Nomor Telepon</string>
+    <string name="furinture_terbaik_di_rumah_anda">Furinture terbaik di rumah anda.</string>
+    <string name="furniture_terbaik_di_rumah_anda">Furniture terbaik di rumah anda.</string>
+
+</resources>
