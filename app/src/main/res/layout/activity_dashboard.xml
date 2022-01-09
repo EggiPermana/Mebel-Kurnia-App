@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
+        <ImageButton
+            android:id="@+id/btn_profil"
             android:layout_width="35dp"
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
@@ -20,12 +21,13 @@
             android:src="@drawable/ic_logo_dashboard" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:clickable="true"
+            android:id="@+id/img_profile"
             android:layout_width="65dp"
             android:layout_height="65dp"
-            android:layout_marginEnd="32dp"
             android:layout_alignParentEnd="true"
-            android:src="@drawable/sekarfoto1" />
+            android:layout_marginEnd="32dp"
+            android:clickable="true"
+            android:src="@drawable/ic_profil" />
 
     </RelativeLayout>
 
@@ -72,9 +74,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="25dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:itemCount="5"
+        tools:listitem="@layout/item_data_furnitur"
+        
         />
 
 

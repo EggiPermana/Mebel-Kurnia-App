@@ -30,7 +30,7 @@
         android:layout_height="164dp"
         android:layout_marginStart="130dp"
         android:layout_marginTop="43dp"
-        android:src="@drawable/sekarfoto1" />
+        android:src="@drawable/ic_profil" />
 
     <TextView
         android:layout_width="match_parent"

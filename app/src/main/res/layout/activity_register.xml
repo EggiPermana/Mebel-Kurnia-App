@@ -104,7 +104,7 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:hint="Nomer Telepon"
-            android:inputType="phone"
+            android:inputType="number"
             android:textColor="@color/black" />
     </com.google.android.material.textfield.TextInputLayout>
 

@@ -12,6 +12,7 @@ import com.example.mebelkurnia.network.RetrofitApp
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.lang.Exception
 import java.sql.Timestamp
 import java.time.Instant
 import java.time.format.DateTimeFormatter
@@ -32,20 +33,14 @@ class RegisterActivity : AppCompatActivity() {
         binding.btnRegister.setOnClickListener {
             val username = binding.etUsername.text.toString()
             val password = binding.etPassword.text.toString()
-            val notelepon = binding.etNoPhone.text.toString()
-            val request = RegisterRequest(username,password,notelepon.toInt())
 
-            RetrofitApp().userService().register(request).enqueue(object: Callback<ResponRegister>{
+            RetrofitApp().userService().register(username, password, 6277).enqueue(object: Callback<ResponRegister>{
                 override fun onResponse(
                     call: Call<ResponRegister>, response: Response<ResponRegister>) {
                     if (response.isSuccessful) {
-                        if (response.body()?.msg == null){
-                            Toast.makeText(this@RegisterActivity, response.body()?.msg, Toast.LENGTH_SHORT).show()
-                        } else {
-                            Toast.makeText(this@RegisterActivity, "halo " + response.body()?.msg, Toast.LENGTH_SHORT).show()
-                        }
+                        onBackPressed()
                     } else {
-                        Toast.makeText(this@RegisterActivity ,response.body()?.msg, Toast.LENGTH_SHORT).show()
+                        Log.d("RegisterActivity", "Kenapa ${response.body()?.msg}")
                     }
                 }
 

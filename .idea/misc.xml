@@ -3,7 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/eggip/.gradle/caches/transforms-3/678f8f90516713ab9a21055c8d2ba99f/transformed/appcompat-1.4.0/res/layout/support_simple_spinner_dropdown_item.xml" value="0.259375" />
+        <entry key="..\:/Users/eggip/AndroidStudioProjects/MebelKurnia/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2462962962962963" />
+        <entry key="..\:/Users/eggip/AndroidStudioProjects/MebelKurnia/app/src/main/res/drawable/bg_circle.xml" value="0.2462962962962963" />
         <entry key="..\:/Users/eggip/AndroidStudioProjects/MebelKurnia/app/src/main/res/drawable/bg_itemkategori.xml" value="0.23796296296296296" />
+        <entry key="..\:/Users/eggip/AndroidStudioProjects/MebelKurnia/app/src/main/res/drawable/bg_search.xml" value="0.2462962962962963" />
+        <entry key="..\:/Users/eggip/AndroidStudioProjects/MebelKurnia/app/src/main/res/drawable/ic_back.xml" value="0.2462962962962963" />
+        <entry key="..\:/Users/eggip/AndroidStudioProjects/MebelKurnia/app/src/main/res/drawable/ic_eyes.xml" value="0.2462962962962963" />
+        <entry key="..\:/Users/eggip/AndroidStudioProjects/MebelKurnia/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2462962962962963" />
+        <entry key="..\:/Users/eggip/AndroidStudioProjects/MebelKurnia/app/src/main/res/drawable/ic_lock.xml" value="0.2462962962962963" />
+        <entry key="..\:/Users/eggip/AndroidStudioProjects/MebelKurnia/app/src/main/res/drawable/ic_logo_dashboard.xml" value="0.2462962962962963" />
+        <entry key="..\:/Users/eggip/AndroidStudioProjects/MebelKurnia/app/src/main/res/drawable/ic_person.xml" value="0.2324074074074074" />
+        <entry key="..\:/Users/eggip/AndroidStudioProjects/MebelKurnia/app/src/main/res/drawable/ic_phone.xml" value="0.2462962962962963" />
+        <entry key="..\:/Users/eggip/AndroidStudioProjects/MebelKurnia/app/src/main/res/drawable/ic_profil.xml" value="0.2462962962962963" />
+        <entry key="..\:/Users/eggip/AndroidStudioProjects/MebelKurnia/app/src/main/res/drawable/ic_tambah.xml" value="0.2324074074074074" />
         <entry key="..\:/Users/eggip/AndroidStudioProjects/MebelKurnia/app/src/main/res/layout/activity_checkout.xml" value="0.259375" />
         <entry key="..\:/Users/eggip/AndroidStudioProjects/MebelKurnia/app/src/main/res/layout/activity_dashboard.xml" value="0.259375" />
         <entry key="..\:/Users/eggip/AndroidStudioProjects/MebelKurnia/app/src/main/res/layout/activity_edit_profil.xml" value="0.259375" />
@@ -13,6 +26,7 @@
         <entry key="..\:/Users/eggip/AndroidStudioProjects/MebelKurnia/app/src/main/res/layout/activity_register.xml" value="0.259375" />
         <entry key="..\:/Users/eggip/AndroidStudioProjects/MebelKurnia/app/src/main/res/layout/activity_register2.xml" value="0.259375" />
         <entry key="..\:/Users/eggip/AndroidStudioProjects/MebelKurnia/app/src/main/res/layout/activity_sukses.xml" value="0.259375" />
+        <entry key="..\:/Users/eggip/AndroidStudioProjects/MebelKurnia/app/src/main/res/layout/item_data_furnitur.xml" value="0.259375" />
       </map>
     </option>
   </component>

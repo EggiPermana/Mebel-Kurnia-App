@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitApp {
 
-    val baseurl = "http://mebel-kurnia.evoindo.xyz/"
+    val baseurl = "http://kurnia-mebel.pancakara.com//"
     fun provideretrofit(): Retrofit = Retrofit.Builder()
         .baseUrl(baseurl)
         .addConverterFactory(GsonConverterFactory.create())

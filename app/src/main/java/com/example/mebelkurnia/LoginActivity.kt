@@ -38,12 +38,14 @@ class LoginActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<ResponLogin>, response: Response<ResponLogin>) {
                     if (response.isSuccessful) {
                         if (response.body()?.data == null){
-                            Toast.makeText(this@LoginActivity,  response.body()?.msg, Toast.LENGTH_SHORT).show()
+                            val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
+                            startActivity(intent)
+                            finish()
                         } else {
                             Toast.makeText(this@LoginActivity, "halo " + response.body()?.data, Toast.LENGTH_SHORT).show()
                         }
                     } else {
-                        Toast.makeText(this@LoginActivity, response.body()?.msg, Toast.LENGTH_SHORT).show()
+                        Log.d("RegisterActivity", "Kenapa ${response.body()?.msg}")
                     }
                 }
 
