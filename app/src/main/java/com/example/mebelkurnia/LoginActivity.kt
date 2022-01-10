@@ -1,6 +1,7 @@
 package com.example.mebelkurnia
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -16,9 +17,12 @@ import retrofit2.Response
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+    private lateinit var pref: SharedPreferencesManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        pref = SharedPreferencesManager(this)
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -38,6 +42,7 @@ class LoginActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<ResponLogin>, response: Response<ResponLogin>) {
                     if (response.isSuccessful) {
                         if (response.body()?.data == null){
+                            pref.setStringPreference("userId", response.body()?.data ?: "0")
                             val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
                             startActivity(intent)
                             finish()

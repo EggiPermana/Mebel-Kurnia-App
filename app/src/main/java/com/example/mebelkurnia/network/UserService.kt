@@ -20,4 +20,13 @@ interface UserService {
     @GET("api/v1/furniture/show.php")
     fun getFurniture(): Call<GetFurnitureResponse>
 
+    @FormUrlEncoded
+    @POST("api/v1/checkout/store.php")
+    fun checkoutFurniture(
+        @Field("id_user") idUser: Int,
+        @Field("id_furniture") idFurniture: Int,
+        @Field("quantity") no: Int,
+    ): Call<ResponRegister>
+
+
 }

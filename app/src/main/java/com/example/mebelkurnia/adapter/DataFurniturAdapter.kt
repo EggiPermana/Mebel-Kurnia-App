@@ -45,6 +45,7 @@ class DataFurniturAdapter(
                 putExtra(CheckoutActivity().EXTRA_NAME, data.name)
                 putExtra(CheckoutActivity().EXTRA_PRICE, data.price)
                 putExtra(CheckoutActivity().EXTRA_IMAGES, data.images)
+                putExtra(CheckoutActivity().EXTRA_ID, data.id)
             }
             mContext.startActivity(intent)
         }

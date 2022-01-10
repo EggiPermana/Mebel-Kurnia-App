@@ -28,6 +28,11 @@ class DashboardActivity : AppCompatActivity() {
             val inten = Intent(this, ProfilActivity::class.java)
             startActivity(inten)
         }
+
+        binding.refresh.setOnRefreshListener {
+            getApiResponse()
+            binding.refresh.isRefreshing = true
+        }
     }
 
     //memulai ambil data api
@@ -38,17 +43,19 @@ class DashboardActivity : AppCompatActivity() {
                 call: Call<GetFurnitureResponse>,
                 response: Response<GetFurnitureResponse>
             ) {
+                binding.refresh.isRefreshing = false
                 if (response.isSuccessful) {
                     response.body()?.data?.let {
                         initiateDataRecyclerView(it)
                     }
                 } else {
+                    binding.refresh.isRefreshing = false
                     Log.d("Dashboard", "Error ${response.message()}")
                 }
             }
-
             override fun onFailure(call: Call<GetFurnitureResponse>, t: Throwable) {
                 Log.d("Dashboard", "Error ${t.message}")
+                binding.refresh.isRefreshing = false
             }
         })
     }

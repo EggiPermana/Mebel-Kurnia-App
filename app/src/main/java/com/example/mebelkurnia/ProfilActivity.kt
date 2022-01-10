@@ -3,6 +3,7 @@ package com.example.mebelkurnia
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.mebelkurnia.databinding.ActivityDashboardBinding
 import com.example.mebelkurnia.databinding.ActivityProfilBinding
 
 class ProfilActivity : AppCompatActivity() {
@@ -10,11 +11,11 @@ class ProfilActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profil)
+        binding = ActivityProfilBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         binding.btnBackFrofil.setOnClickListener {
-            val inten = Intent(this, DashboardActivity::class.java)
-            startActivity(inten)
+            onBackPressed()
         }
     }
 }

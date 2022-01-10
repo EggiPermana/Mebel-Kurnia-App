@@ -142,6 +142,7 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/btnCheckout"
             android:layout_marginTop="20dp"
             android:layout_marginStart="50dp"
             android:layout_width="300dp"
