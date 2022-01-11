@@ -10,6 +10,8 @@ import com.example.mebelkurnia.databinding.ActivityLoginBinding
 import com.example.mebelkurnia.network.LoginRequest
 import com.example.mebelkurnia.network.ResponLogin
 import com.example.mebelkurnia.network.RetrofitApp
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.RequestBody.Companion.toRequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,8 +23,8 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         pref = SharedPreferencesManager(this)
+
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -36,13 +38,15 @@ class LoginActivity : AppCompatActivity() {
             val username = binding.etUsername.text.toString()
             val password = binding.etPassword.text.toString()
 
-            val request = LoginRequest(username = username,password)
+            val bodyUsername = username.toRequestBody(username.toMediaTypeOrNull())
+            val bodyPassword = password.toRequestBody(password.toMediaTypeOrNull())
 
-            RetrofitApp().userService().login(request).enqueue(object: Callback<ResponLogin>{
+            RetrofitApp().userService().login(bodyUsername, bodyPassword).enqueue(object: Callback<ResponLogin>{
                 override fun onResponse(call: Call<ResponLogin>, response: Response<ResponLogin>) {
                     if (response.isSuccessful) {
-                        if (response.body()?.data == null){
-                            pref.setStringPreference("userId", response.body()?.data ?: "0")
+                        if (response.body()?.data != null){
+                            pref.setStringPreference("userId", response.body()?.data?.id ?: "0")
+                            pref.setStringPreference("username", username)
                             val intent = Intent(this@LoginActivity, DashboardActivity::class.java)
                             startActivity(intent)
                             finish()

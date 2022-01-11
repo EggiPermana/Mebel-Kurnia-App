@@ -18,4 +18,5 @@ class SharedPreferencesManager(context: Context) {
     }
 
     val getUserId = prefs.getString("userId", "")
+    val getUserName = prefs.getString("username", "")
 }

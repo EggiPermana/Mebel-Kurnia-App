@@ -141,6 +141,24 @@
 
         </LinearLayout>
 
+        <TextView
+            android:layout_width="68dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Alamat :"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/alamat"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
         <Button
             android:id="@+id/btnCheckout"
             android:layout_marginTop="20dp"
@@ -148,7 +166,7 @@
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:backgroundTint="#000D6B"
-            android:text="Checkout"
+            android:text="Order"
             android:textAllCaps="false" />
 
     </LinearLayout>

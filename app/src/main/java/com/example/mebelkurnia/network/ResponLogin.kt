@@ -4,6 +4,6 @@ data class ResponLogin(
 
     val status: String,
     val msg: String,
-    val data: String,
+    val data: User,
 
 )

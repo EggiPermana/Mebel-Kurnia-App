@@ -12,10 +12,14 @@ class ProfilActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProfilBinding.inflate(layoutInflater)
+        val pref = SharedPreferencesManager(this)
+
         setContentView(binding.root)
 
         binding.btnBackFrofil.setOnClickListener {
             onBackPressed()
         }
+
+        binding.tvName.text = pref.getUserName
     }
 }

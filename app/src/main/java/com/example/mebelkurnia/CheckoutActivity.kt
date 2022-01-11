@@ -12,6 +12,7 @@ import com.example.mebelkurnia.network.RetrofitApp
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class CheckoutActivity : AppCompatActivity() {
 
@@ -24,7 +25,7 @@ class CheckoutActivity : AppCompatActivity() {
     private lateinit var name: String
     private lateinit var images: String
     private lateinit var price: String
-    private lateinit var id : String
+    private lateinit var id: String
     private lateinit var pref: SharedPreferencesManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,29 +77,46 @@ class CheckoutActivity : AppCompatActivity() {
 
         binding.btnCheckout.setOnClickListener {
             val idUser = pref.getUserId ?: "0"
-            checkoutProduct(idUser = idUser.toInt(), idFurniture = id.toInt(), quantity)
+            val address = binding.alamat.text.toString()
+            val newUUID = UUID.randomUUID().toString()
+            checkoutProduct(
+                kode = newUUID,
+                idUser = idUser.toInt(),
+                idFurniture = id.toInt(),
+                quantity,
+                price = realPrice.toString(),
+                address = address
+            )
         }
     }
 
-    private fun checkoutProduct(idUser: Int,idFurniture: Int, quantity: Int) {
-        RetrofitApp().userService().checkoutFurniture(idUser, idFurniture, quantity).enqueue(object : Callback<ResponRegister> {
-            override fun onResponse(
-                call: Call<ResponRegister>,
-                response: Response<ResponRegister>
-            ) {
-                if (response.isSuccessful){
-                    if (response.body()?.msg?.isNotEmpty() == false){
+    private fun checkoutProduct(
+        kode: String,
+        idUser: Int,
+        idFurniture: Int,
+        quantity: Int,
+        price: String,
+        address: String
+    ) {
+        RetrofitApp().userService()
+            .orderFurniture(kode, idUser, idFurniture, quantity, price, address)
+            .enqueue(object : Callback<ResponRegister> {
+                override fun onResponse(
+                    call: Call<ResponRegister>,
+                    response: Response<ResponRegister>
+                ) {
+                    if (response.isSuccessful) {
                         val intent = Intent(this@CheckoutActivity, SuksesActivity::class.java)
                         startActivity(intent)
                         finish()
                     } else {
-                        Log.d("CheckoutActivity",response.body()?.msg ?: "error")
+                        Log.d("CheckoutActivity", response.body()?.msg ?: "error")
                     }
                 }
-            }
-            override fun onFailure(call: Call<ResponRegister>, t: Throwable) {
-                Log.d("CheckoutActivity",t.message ?: "failure")
-            }
-        })
+
+                override fun onFailure(call: Call<ResponRegister>, t: Throwable) {
+                    Log.d("CheckoutActivity", t.message ?: "failure")
+                }
+            })
     }
 }
